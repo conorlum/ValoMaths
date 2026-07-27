@@ -61,7 +61,7 @@
 {% if session.matches | length >= 2 and stats.shoutouts %}
 <div class="card">
   <h2>Shoutouts</h2>
-  <p class="page-meta">One highlight for every player in this session.</p>
+  <p class="page-meta">{% if current_player %}One highlight for you and every friend in this session.{% else %}One highlight for every player in this session.{% endif %}</p>
   <div class="shoutout-rows">
     {% for row in stats.shoutouts | balanced_rows %}
     <div class="shoutout-row">
