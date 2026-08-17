@@ -1,8 +1,3 @@
-databases:
-  - name: valomaths-db
-    plan: free
-    postgresMajorVersion: "16"
-
 services:
   - type: web
     name: valomaths
@@ -15,8 +10,6 @@ services:
       - key: PYTHON_VERSION
         value: 3.13.4
       - key: DATABASE_URL
-        fromDatabase:
-          name: valomaths-db
-          property: connectionString
+        sync: false
       - key: SESSION_SECRET
         generateValue: true
